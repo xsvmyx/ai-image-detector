@@ -2,3 +2,9 @@ torch
 torchvision
 tqdm
 Pillow
+scikit-learn
+numpy
+pandas
+huggingface_hub
+streamlit
+dotenv

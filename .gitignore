@@ -8,6 +8,8 @@ __pycache__/
 .venv/
 .env/
 
+.env
+
 # Data
 data/
 fake_large/
@@ -22,3 +24,5 @@ fake_large/
 best_model.pt
 best_model_wl.pt
 best_deepfake_detector.pt
+
+
