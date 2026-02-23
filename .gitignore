@@ -16,6 +16,7 @@ fake_large/
 images/
 models/
 *.pt        # fichiers PyTorch
+80k/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -29,3 +30,5 @@ best_deepfake_detector.pt
 
 
 requirement.txt
+
+notebooks0/

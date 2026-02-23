@@ -25,6 +25,7 @@ transform = transforms.Compose([
 def load_model():
     # Download weights from Hugging Face Hub
     path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
+   # path = "./models/ai_detector.pth"  
     model = DeepfakeDetectorCNN()
     
     
@@ -41,9 +42,9 @@ def load_model():
 
 # --- STREAMLIT UI ---
 st.set_page_config(page_title="AI/Deepfake Detector", page_icon="🛡️")
-st.title("🛡️ AI/Deepfake Detector")
+st.title("🛡️ AI Image Detector")
 st.markdown("""
-    This application uses a custom Convolutional Neural Network (CNN) to detect whether a face image is **Real** or a **Deepfake/AI generated**.
+    This application uses a custom Convolutional Neural Network (CNN) to detect whether a face image is **Real** or **AI generated**.
 """)
 
 
@@ -85,4 +86,4 @@ if uploaded_file:
         st.progress(prob_fake)
 
     
-    st.info("💡 The model analyzes texture artifacts and biological inconsistencies invisible to the naked eye")
+    st.info("The model analyzes texture artifacts and biological inconsistencies invisible to the naked eye\n**Note: This model may not be 100% accurate. Always verify with multiple sources!**")
