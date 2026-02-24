@@ -3,7 +3,7 @@ import torch
 from PIL import Image
 from torchvision import transforms
 from huggingface_hub import hf_hub_download
-from model_arch import DeepfakeDetectorCNN 
+from model_arch import AiDetectorCNN 
 import os
 from dotenv import load_dotenv
 
@@ -26,7 +26,7 @@ def load_model():
     # Download weights from Hugging Face Hub
     path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
    # path = "./models/ai_detector.pth"  
-    model = DeepfakeDetectorCNN()
+    model = AiDetectorCNN()
     
     
     checkpoint = torch.load(path, map_location="cpu")
@@ -41,7 +41,7 @@ def load_model():
     return model
 
 # --- STREAMLIT UI ---
-st.set_page_config(page_title="AI/Deepfake Detector", page_icon="🛡️")
+st.set_page_config(page_title="AI image Detector", page_icon="🛡️")
 st.title("🛡️ AI Image Detector")
 st.markdown("""
     This application uses a custom Convolutional Neural Network (CNN) to detect whether a face image is **Real** or **AI generated**.
@@ -76,12 +76,12 @@ if uploaded_file:
     st.divider()
     
     
-    if prob_real > 0.5:
+    if prob_real > 0.3:
         st.success(f"✅ Prediction: **REAL**")
         st.metric("Confidence", f"{prob_real:.2%}")
         st.progress(prob_real)
     else:
-        st.error(f"🚨 Prediction: **FAKE**")
+        st.error(f"🚨 Prediction: **AI GENERATED**")
         st.metric("Confidence", f"{prob_fake:.2%}")
         st.progress(prob_fake)
 

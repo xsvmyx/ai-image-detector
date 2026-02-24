@@ -2,9 +2,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch
 
-class DeepfakeDetectorCNN(nn.Module):
+class AiDetectorCNN(nn.Module):
     def __init__(self):
-        super(DeepfakeDetectorCNN, self).__init__()
+        super(AiDetectorCNN, self).__init__()
         
         # Blocs de convolution
         self.conv1 = nn.Conv2d(3, 32, kernel_size=3, padding=1)
