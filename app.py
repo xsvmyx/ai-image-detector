@@ -67,9 +67,8 @@ if uploaded_file:
     with st.spinner("Analyse en cours..."):
         with torch.no_grad():
             output = model(img_t)
-            # Puisque ton modèle finit par une Sigmoïde, output est déjà une probabilité (0 à 1)
-            # Dans ton train : 0 = Fake, 1 = Real
-            prob_real = output.item()
+            #0 = Fake, 1 = Real
+            prob_real = torch.sigmoid(output).item()  # Convertir en probabilité et extraire la valeur scalaire
             prob_fake = 1 - prob_real
 
     
