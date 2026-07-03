@@ -1,4 +1,4 @@
-# 🛡️ Deepfake Detection Project : De la V1 à la V2
+# 🛡️ AiDetectorCNN Project : De la V1 à la V2
 
 ### [Click here to try the Streamlit App](https://ai-image-detector-amjen5txq2iyg3zktocmmd.streamlit.app/)
 
